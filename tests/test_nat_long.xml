@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<waet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test-schema.xsd">
+    <setup interface="MUSHRA" projectReturn="save.php" returnURL="" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
+        <exitText>Results Saved! Please complete Part 2 - Paste this into your browser: http://134.122.100.154:8000/part_2.html       You can shut this window. Thank you for completing Part 1</exitText>
+        <calibration checkFrequencies="false" checkLevels="false" checkChannels="false"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="welcome" name="welcome" mandatory="true">
+                <statement>This is part 1 of the survey. The total time to complete both parts is about 20-30 mins. You can take a break after part 1 and continue at a later time for part 2 if needed.
+
+In the survey you will be asked to rate voices, some of the recordings have been generated from AI and others are real. 
+
+Thank you for taking the survey and I hope you enjoy it.</statement>
+            </surveystatement>
+            <surveyquestion id="name" name="name" boxsize="normal" mandatory="true">
+                <statement>Please enter your name</statement>
+            </surveyquestion>
+            <surveycheckbox id="headphones" name="headphones" min="1" max="1">
+                <statement>It is recommended to wear headphones throughout the survey. Please use them if you have access to them.</statement>
+                <option name="yes">Yes - I am wearing headphones</option>
+                <option name="no">No - I am using speakers</option>
+            </surveycheckbox>
+            <surveycheckbox id="quiet" name="quiet" min="1" max="1">
+                <statement>Are you in a quiet environment</statement>
+                <option name="yes">Yes</option>
+                <option name="no">No</option>
+            </surveycheckbox>
+            <surveycheckbox id="english" name="english" min="1" max="1">
+                <statement>Please indicate your proficiency in English</statement>
+                <option name="Native">Native (incl. bilingual)</option>
+                <option name="Excellent">Excellent</option>
+                <option name="Good">Good</option>
+                <option name="Basic">Basic</option>
+            </surveycheckbox>
+        </survey>
+        <survey location="post" showBackButton="true">
+            <surveyquestion id="outro_nat_q" name="outro_nat_q">
+                <statement>Please add any thoughts, issues, comments about the survey. For example were there any common reasons for rating some samples Unnatural (Optional)</statement>
+            </surveyquestion>
+        </survey>
+        <metric>
+            <metricenable>testTimer</metricenable>
+            <metricenable>elementTimer</metricenable>
+            <metricenable>elementInitialPosition</metricenable>
+            <metricenable>elementTracker</metricenable>
+            <metricenable>elementFlagListenedTo</metricenable>
+            <metricenable>elementFlagMoved</metricenable>
+            <metricenable>elementListenTracker</metricenable>
+        </metric>
+        <interface>
+            <interfaceoption type="check" name="fragmentMoved"/>
+            <interfaceoption type="check" name="fragmentPlayed"/>
+            <interfaceoption type="show" name="ticks"/>
+            <interfaceoption type="show" name="playhead"/>
+        </interface>
+    </setup>
+    <page id="nat-a-00" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" position="0" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <interfaceoption name="fragmentFullPlayback" type="check"/>
+            <interfaceoption name="fragmentMoved" type="check"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-00-ref.wav" id="nat-a-00-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-00-mel.wav" id="nat-a-00-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-00-v08.wav" id="nat-a-00-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-00-v09.wav" id="nat-a-00-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-00-v10.wav" id="nat-a-00-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="intro_nat_1" name="intro_nat_1">
+                <statement>There are 10 pages on this test. On each page there will be 4 or 5 speech samples with a vertical natural rating scale. 
+
+1. Click on 'Play' at the bottom of the scale to listen to a speech sample
+2. Move the slider to reflect how natural the speech sounds
+3. Please listen to each speech sample fully before moving to the next page
+4. You do not have to use the full range of the scale if you do not want to
+5. Real human speech should be very close to 'Very Natural' and robotic speech would be 'Very Unnatural', but this is a subjective test so use you gut instinct on where the speech samples rate</statement>
+            </surveystatement>
+        </survey>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-01" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-01-ref.wav" id="nat-a-01-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-01-mel.wav" id="nat-a-01-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-01-v08.wav" id="nat-a-01-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-01-v09.wav" id="nat-a-01-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-01-v10.wav" id="nat-a-01-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-02" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-02-ref.wav" id="nat-a-02-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-02-mel.wav" id="nat-a-02-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-02-v08.wav" id="nat-a-02-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-02-v09.wav" id="nat-a-02-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-02-v10.wav" id="nat-a-02-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-03" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-03-ref.wav" id="nat-a-03-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-03-mel.wav" id="nat-a-03-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-03-v08.wav" id="nat-a-03-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-03-v09.wav" id="nat-a-03-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-03-v10.wav" id="nat-a-03-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-04" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-04-ref.wav" id="nat-a-04-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-04-mel.wav" id="nat-a-04-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-04-v08.wav" id="nat-a-04-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-04-v09.wav" id="nat-a-04-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-04-v10.wav" id="nat-a-04-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-00" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-00-mel.wav" id="nat-t-00-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-00-v08.wav" id="nat-t-00-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-00-v09.wav" id="nat-t-00-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-00-v10.wav" id="nat-t-00-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-01" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-01-mel.wav" id="nat-t-01-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-01-v08.wav" id="nat-t-01-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-01-v09.wav" id="nat-t-01-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-01-v10.wav" id="nat-t-01-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-02" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-02-mel.wav" id="nat-t-02-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-02-v08.wav" id="nat-t-02-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-02-v09.wav" id="nat-t-02-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-02-v10.wav" id="nat-t-02-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-03" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-03-mel.wav" id="nat-t-03-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-03-v08.wav" id="nat-t-03-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-03-v09.wav" id="nat-t-03-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-03-v10.wav" id="nat-t-03-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-04" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-04-mel.wav" id="nat-t-04-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-04-v08.wav" id="nat-t-04-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-04-v09.wav" id="nat-t-04-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-04-v10.wav" id="nat-t-04-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+</waet>

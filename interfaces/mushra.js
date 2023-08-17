@@ -198,7 +198,7 @@ function loadTest(audioHolderObject) {
                 sliderObj.slider.value = audioHolderObject.initalPosition;
             } else {
                 // Distribute it randomnly
-                sliderObj.slider.value = Math.random();
+                sliderObj.slider.value = 0.5;
             }
             sliderBox.appendChild(sliderObj.holder);
             audioObject.bindInterface(sliderObj);

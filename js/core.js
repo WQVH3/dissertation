@@ -3013,7 +3013,7 @@ function Interface(specificationObject) {
         this.outsideReferenceHolder = document.createElement('button');
         this.outsideReferenceHolder.className = 'outside-reference';
         this.outsideReferenceHolder.setAttribute('track-id', index);
-        this.outsideReferenceHolder.textContent = this.parent.specification.label || "Reference";
+        this.outsideReferenceHolder.textContent = this.parent.specification.label || "Reference - Play me first";
         this.outsideReferenceHolder.disabled = true;
         this.handleEvent = function (event) {
             audioEngineContext.play(this.parent.id);
