@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <waet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test-schema.xsd">
-    <setup interface="MUSHRA" projectReturn="save.php" returnURL="" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
-        <exitText>Results Saved! Please complete Part 2 - Paste this into your browser: http://134.122.100.154:8000/part_2.html       You can shut this window. Thank you for completing Part 1</exitText>
+    <setup interface="MUSHRA" projectReturn="save.php" returnURL="test.html?url=tests/test_sim.xml" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
+        <exitText></exitText>
         <calibration checkFrequencies="false" checkLevels="false" checkChannels="false"/>
         <survey location="pre" showBackButton="true">
             <surveystatement id="welcome" name="welcome" mandatory="true">
@@ -36,6 +36,10 @@ Thank you for taking the survey and I hope you enjoy it.</statement>
             <surveyquestion id="outro_nat_q" name="outro_nat_q">
                 <statement>Please add any thoughts, issues, comments about the survey. For example were there any common reasons for rating some samples Unnatural (Optional)</statement>
             </surveyquestion>
+            <surveystatement id="exit" name="exit" mandatory="true">
+                <statement>Part 1 Completed! Click submit to continue to Part 2.
+                </statement>
+            </surveystatement>
         </survey>
         <metric>
             <metricenable>testTimer</metricenable>

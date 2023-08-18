@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <waet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test-schema.xsd">
-    <setup interface="MUSHRA" projectReturn="save.php" returnURL="" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
+    <setup interface="MUSHRA" projectReturn="save.php" returnURL="thankyou.html?" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
         <exitText>Results Saved! You have completed the Survey, it is safe to shut this window. I really owe you one! This data will be used for results in my Dissertation. Thank you!</exitText>
         <calibration checkFrequencies="false" checkLevels="false" checkChannels="false"/>
         <survey location="pre" showBackButton="true">
