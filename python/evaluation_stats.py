@@ -39,6 +39,7 @@ page_count       = []
 duration_page    = []      # duration of experiment in function of page content
 duration_order   = []      # duration of experiment in function of page number
 fragments_per_page = []    # number of fragments for corresponding page
+names = []
 
 # get every XML file in folder
 files_list = os.listdir(folder_name)
@@ -53,6 +54,14 @@ for file in files_list: # iterate over all files in files_list
         # reset for new subject
         total_duration = 0
         page_number = 0
+        
+        for surveyresult in root.findall("./survey/surveyresult"):
+            if surveyresult.get('ref') == "name":
+                for response in surveyresult.findall("./response"):
+                    print(f'name: {response.text}')
+                    names.append(response.text)
+        
+        
         
         # get list of all page names
         for page in root.findall("./page"):   # iterate over pages
@@ -177,6 +186,7 @@ for page_number in range(len(duration_order)):
             " ("+str(len(duration_order[page_number]))+" subjects)")
 
 
+
 # Sort pages by number of audioelements, then by duration
 
 # average duration and number of subjects per page
@@ -198,6 +208,9 @@ for page_index in range(len(page_names)):
           + " (" + str(combined_list[page_index][3]) + " subjects, " \
           + str(combined_list[page_index][2]) + " fragments)")
 
+print(f'people:')
+for name in sorted(names):
+    print(name)
 
 #TODO
 # time per page in function of number of fragments (plot)
