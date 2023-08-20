@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<waetresult linked="CeKbIBOSc4Ji0TBoL47fWsHnnLygpody" key="oNNYIoEBDfvSSz1nWoJhjaqRlcr36Rjg" state="update"><waet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test-schema.xsd" file-name="tests/test_sim.xml" url="http://fredclarke.co.uk/tests/test_sim.xml">
+    <setup interface="MUSHRA" projectReturn="save.php" returnURL="thankyou.html?" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
+        <exitText>Results Saved! You have completed the Survey, it is safe to shut this window. I really owe you one! This data will be used for results in my Dissertation. Thank you!</exitText>
+        <calibration checkFrequencies="false" checkLevels="false" checkChannels="false"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="welcome" name="welcome" mandatory="true">
+                <statement>This is Part 2 of the survey. I'll have to ask for your name and other intro questions again. Click Next to begin</statement>
+            </surveystatement>
+            <surveyquestion id="name" name="name" mandatory="true" boxsize="normal">
+                <statement>Please enter your name (again)</statement>
+            </surveyquestion>
+            <surveycheckbox id="headphones" name="headphones" mandatory="true" min="1" max="1">
+                <statement>Please confirm if you're wearing headphones (again)</statement>
+                <option name="yes">Yes - I'm wearing headphones</option>
+                <option name="no">No - I'm not wearing headphones</option>
+            </surveycheckbox>
+            <surveycheckbox id="quiet" name="quiet" min="1" max="1">
+                <statement>Are you in a quiet environment</statement>
+                <option name="yes">Yes</option>
+                <option name="no">No</option>
+            </surveycheckbox>
+            <surveycheckbox id="english" name="english" min="1" max="1">
+                <statement>Please indicate your proficiency in English</statement>
+                <option name="Native">Native (incl. bilingual)</option>
+                <option name="Excellent">Excellent</option>
+                <option name="Good">Good</option>
+                <option name="Basic">Basic</option>
+            </surveycheckbox>
+        </survey>
+        <survey location="post" showBackButton="true">
+            <surveyquestion id="outro_sim_q" name="outro_sim_q">
+                <statement>Please add any thoughts, issues, comments about the survey. For example were there any common reasons for rating some samples Dissimilar  (Optional)</statement>
+            </surveyquestion>
+        </survey>
+        <metric>
+            <metricenable>testTimer</metricenable>
+            <metricenable>elementTimer</metricenable>
+            <metricenable>elementInitialPosition</metricenable>
+            <metricenable>elementTracker</metricenable>
+            <metricenable>elementFlagListenedTo</metricenable>
+            <metricenable>elementFlagMoved</metricenable>
+            <metricenable>elementListenTracker</metricenable>
+        </metric>
+        <interface>
+            <interfaceoption type="check" name="fragmentMoved"/>
+            <interfaceoption name="fragmentFullPlayback" type="check"/>
+            <interfaceoption name="playhead" type="show"/>
+            <interfaceoption name="page-count" type="show"/>
+            <interfaceoption name="volume" type="show"/>
+        </interface>
+    </setup>
+    <page id="sim-08" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" position="0" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="08-outref.wav" id="sim-08-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="08-ref.wav" id="sim-08-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="08-mel.wav" id="sim-08-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="08-v09.wav" id="sim-08-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="sim_instructions" name="sim_instructions">
+                <statement>In part 2 of the survey, you are rating similarity between a reference voice, and all other voice samples. Two voices are similar if you think they are from the same person.
+                
+Note that the speech samples are now saying different things.
+
+There are 8 pages in total. On each page:
+1. Listen to the reference voice at the top of the page
+2. Then listen to the voice samples at the bottom of the page and rate how similar each one is to the reference
+3. This is a subjective test, so use your gut instinct when rating. 'Very Similar' means you think the sample voice and the reference voice are from the same person, while 'Very Dissimilar' represents two different voices.
+4. Please listen to each speech sample fully
+                </statement>
+            </surveystatement>
+            <surveystatement id="sim_reminder" name="sim_reminder">
+                <statement>Remember to listen to the reference voice first at the top of the page.
+                </statement>
+            </surveystatement>
+        </survey>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-09" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="09-outref.wav" id="sim-09-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="09-ref.wav" id="sim-09-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="09-mel.wav" id="sim-09-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="09-v09.wav" id="sim-09-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-10" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="10-outref.wav" id="sim-10-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="10-ref.wav" id="sim-10-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="10-mel.wav" id="sim-10-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="10-v09.wav" id="sim-10-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-11" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="11-outref.wav" id="sim-11-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="11-ref.wav" id="sim-11-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="11-mel.wav" id="sim-11-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="11-v09.wav" id="sim-11-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-12" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="12-outref.wav" id="sim-12-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="12-ref.wav" id="sim-12-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="12-mel.wav" id="sim-12-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="12-v09.wav" id="sim-12-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-13" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="13-outref.wav" id="sim-13-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="13-ref.wav" id="sim-13-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="13-mel.wav" id="sim-13-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="13-v09.wav" id="sim-13-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-14" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="14-outref.wav" id="sim-14-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="14-ref.wav" id="sim-14-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="14-mel.wav" id="sim-14-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="14-v09.wav" id="sim-14-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="sim-05" hostURL="media/experiment/similarity/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="similarity">
+            <title>Listen to the reference, and then rate how similar each voice is to it</title>
+            <scales>
+                <scalelabel position="100">Very Similar</scalelabel>
+                <scalelabel position="75">More Similar</scalelabel>
+                <scalelabel position="50">Similar</scalelabel>
+                <scalelabel position="25">Dissimilar</scalelabel>
+                <scalelabel position="0">Very Dissimilar</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="05-outref.wav" id="sim-05-outref" gain="0" label="" type="outside-reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="05-ref.wav" id="sim-05-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="05-mel.wav" id="sim-05-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="0"/>
+        <audioelement url="05-v09.wav" id="sim-05-v09" gain="0" type="normal"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+</waet><datetime><date year="2023" month="8" day="20"/><time hour="11" minute="59" secs="54"/></datetime><navigator><platform>iPhone</platform><vendor>Apple Computer, Inc.</vendor><uagent>Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Mobile/15E148 Safari/604.1</uagent><window innerWidth="980" innerHeight="1432"/></navigator><survey location="pre" state="complete"><surveyresult ref="name" type="question" duration="10.749"><response>Lucy</response></surveyresult><surveyresult ref="headphones" type="checkbox" duration="4.482"><response name="yes" checked="true"/><response name="no" checked="false"/></surveyresult><surveyresult ref="quiet" type="checkbox" duration="3.183"><response name="yes" checked="true"/><response name="no" checked="false"/></surveyresult><surveyresult ref="english" type="checkbox" duration="14.984"><response name="Native" checked="true"/><response name="Excellent" checked="false"/><response name="Good" checked="false"/><response name="Basic" checked="false"/></surveyresult></survey><survey location="post" state="empty"><surveyresult ref="outro_sim_q" type="question"/></survey><page ref="sim-13" presentedId="1" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-13-ref" type="reference" url="13-ref.wav" fqurl="http://fredclarke.co.uk/13-ref.wav" gain="0" playGain="-3.4282907746682083" presentedId="A"><metric/></audioelement><audioelement ref="sim-13-v09" type="normal" url="13-v09.wav" fqurl="http://fredclarke.co.uk/13-v09.wav" gain="0" playGain="-10.098944285768955" presentedId="B"><metric/></audioelement><audioelement ref="sim-13-mel" type="normal" url="13-mel.wav" fqurl="http://fredclarke.co.uk/13-mel.wav" gain="0" playGain="-8.756509885315" presentedId="C"><metric/></audioelement><audioelement ref="sim-13-outref" type="outside-reference" url="13-outref.wav" fqurl="http://fredclarke.co.uk/13-outref.wav" gain="0" playGain="-3.499942408508158" presentedId="Reference"><metric/></audioelement></page><page ref="sim-14" presentedId="3" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-14-ref" type="reference" url="14-ref.wav" fqurl="http://fredclarke.co.uk/14-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-14-mel" type="normal" url="14-mel.wav" fqurl="http://fredclarke.co.uk/14-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-14-v09" type="normal" url="14-v09.wav" fqurl="http://fredclarke.co.uk/14-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-14-outref" type="outside-reference" url="14-outref.wav" fqurl="http://fredclarke.co.uk/14-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-12" presentedId="5" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-12-mel" type="normal" url="12-mel.wav" fqurl="http://fredclarke.co.uk/12-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-12-v09" type="normal" url="12-v09.wav" fqurl="http://fredclarke.co.uk/12-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-12-ref" type="reference" url="12-ref.wav" fqurl="http://fredclarke.co.uk/12-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-12-outref" type="outside-reference" url="12-outref.wav" fqurl="http://fredclarke.co.uk/12-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-05" presentedId="7" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-05-mel" type="normal" url="05-mel.wav" fqurl="http://fredclarke.co.uk/05-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-05-v09" type="normal" url="05-v09.wav" fqurl="http://fredclarke.co.uk/05-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-05-ref" type="reference" url="05-ref.wav" fqurl="http://fredclarke.co.uk/05-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-05-outref" type="outside-reference" url="05-outref.wav" fqurl="http://fredclarke.co.uk/05-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-09" presentedId="2" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-09-v09" type="normal" url="09-v09.wav" fqurl="http://fredclarke.co.uk/09-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-09-ref" type="reference" url="09-ref.wav" fqurl="http://fredclarke.co.uk/09-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-09-mel" type="normal" url="09-mel.wav" fqurl="http://fredclarke.co.uk/09-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-09-outref" type="outside-reference" url="09-outref.wav" fqurl="http://fredclarke.co.uk/09-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-10" presentedId="6" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-10-mel" type="normal" url="10-mel.wav" fqurl="http://fredclarke.co.uk/10-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-10-ref" type="reference" url="10-ref.wav" fqurl="http://fredclarke.co.uk/10-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-10-v09" type="normal" url="10-v09.wav" fqurl="http://fredclarke.co.uk/10-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-10-outref" type="outside-reference" url="10-outref.wav" fqurl="http://fredclarke.co.uk/10-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-11" presentedId="4" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="sim-11-mel" type="normal" url="11-mel.wav" fqurl="http://fredclarke.co.uk/11-mel.wav" gain="0"><metric/></audioelement><audioelement ref="sim-11-ref" type="reference" url="11-ref.wav" fqurl="http://fredclarke.co.uk/11-ref.wav" gain="0"><metric/></audioelement><audioelement ref="sim-11-v09" type="normal" url="11-v09.wav" fqurl="http://fredclarke.co.uk/11-v09.wav" gain="0"><metric/></audioelement><audioelement ref="sim-11-outref" type="outside-reference" url="11-outref.wav" fqurl="http://fredclarke.co.uk/11-outref.wav" gain="0"><metric/></audioelement></page><page ref="sim-08" presentedId="0" state="complete"><survey location="pre" state="complete"/><survey location="post" state="empty"/><metric><metricresult id="testTime">107.136</metricresult></metric><audioelement ref="sim-08-ref" type="reference" url="08-ref.wav" fqurl="http://fredclarke.co.uk/08-ref.wav" gain="0" playGain="-3.823616650971073" presentedId="A"><metric><metricresult name="enableElementTimer">8.362666666666684</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="19.400000000000006" value="0.92"/><movement time="42.352000000000004" value="0"/><movement time="44.618666666666655" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="10.51466666666667" stop="14.695999999999998"/><buffertime start="0" stop="0"/></event><event><testtime start="46.05333333333331" stop="50.23466666666667"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="195840" duration="4.08"/><value interface-name="similarity">1</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="sim-08-mel" type="normal" url="08-mel.wav" fqurl="http://fredclarke.co.uk/08-mel.wav" gain="0" playGain="-8.817061083985553" presentedId="B"><metric><metricresult name="enableElementTimer">7.1200000000000045</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="32.02933333333331" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="21.034666666666652" stop="24.594666666666654"/><buffertime start="0" stop="0"/></event><event><testtime start="51.46666666666667" stop="55.02666666666667"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="166080" duration="3.46"/><value interface-name="similarity">1</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="sim-08-v09" type="normal" url="08-v09.wav" fqurl="http://fredclarke.co.uk/08-v09.wav" gain="0" playGain="-12.30730334424111" presentedId="C"><metric><metricresult name="enableElementTimer">6.277333333333331</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="64.12" value="0.77"/><movement time="74.05066666666667" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="33.78666666666666" stop="36.92533333333333"/><buffertime start="0" stop="0"/></event><event><testtime start="58.23999999999998" stop="61.378666666666646"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="145920" duration="3.04"/><value interface-name="similarity">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="sim-08-outref" type="outside-reference" url="08-outref.wav" fqurl="http://fredclarke.co.uk/08-outref.wav" gain="0" playGain="-3.810313055555942" presentedId="Reference"><metric><metricresult name="enableElementTimer">11.162666666666667</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0.005333333333339851" stop="2.7920000000000016"/><buffertime start="0" stop="0"/></event><event><testtime start="5.48266666666666" stop="8.274666666666661"/><buffertime start="0" stop="0"/></event><event><testtime start="26.333333333333314" stop="29.125333333333316"/><buffertime start="0" stop="0"/></event><event><testtime start="65.60266666666666" stop="68.39466666666667"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">false</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="129120" duration="2.69"/></audioelement></page></waetresult>

@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<waetresult key="a2ODigvWDf95pB88Pxobk4Jep2yzlt7r" state="update"><waet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test-schema.xsd" file-name="tests/test_nat.xml" url="http://fredclarke.co.uk/tests/test_nat.xml">
+    <setup interface="MUSHRA" projectReturn="save.php" returnURL="test.html?url=tests/test_sim.xml" randomiseOrder="true" poolSize="0" loudness="-23" crossFade="0" randomiseAxisOrder="false" preSilence="0" postSilence="0" playOne="false" minNumberPlays="0">
+        <exitText/>
+        <calibration checkFrequencies="false" checkLevels="false" checkChannels="false"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="welcome" name="welcome" mandatory="true">
+                <statement>This is part 1 of the survey. The total time to complete both parts is about 20-30 mins. You can take a break after part 1 and continue at a later time for part 2 if needed.
+
+In the survey you will be asked to rate voices, some of the recordings have been generated from AI and others are real. 
+
+Thank you for taking the survey and I hope you enjoy it.</statement>
+            </surveystatement>
+            <surveyquestion id="name" name="name" boxsize="normal" mandatory="true">
+                <statement>Please enter your name</statement>
+            </surveyquestion>
+            <surveycheckbox id="headphones" name="headphones" min="1" max="1">
+                <statement>It is recommended to wear headphones throughout the survey. Please use them if you have access to them.</statement>
+                <option name="yes">Yes - I am wearing headphones</option>
+                <option name="no">No - I am using speakers</option>
+            </surveycheckbox>
+            <surveycheckbox id="quiet" name="quiet" min="1" max="1">
+                <statement>Are you in a quiet environment</statement>
+                <option name="yes">Yes</option>
+                <option name="no">No</option>
+            </surveycheckbox>
+            <surveycheckbox id="english" name="english" min="1" max="1">
+                <statement>Please indicate your proficiency in English</statement>
+                <option name="Native">Native (incl. bilingual)</option>
+                <option name="Excellent">Excellent</option>
+                <option name="Good">Good</option>
+                <option name="Basic">Basic</option>
+            </surveycheckbox>
+        </survey>
+        <survey location="post" showBackButton="true">
+            <surveyquestion id="outro_nat_q" name="outro_nat_q">
+                <statement>Please add any thoughts, issues, comments about the survey. For example were there any common reasons for rating some samples Unnatural (Optional)</statement>
+            </surveyquestion>
+            <surveystatement id="outro_nat_q_1" name="outro_nat_q_1" mandatory="true">
+                <statement>Part 1 Completed! Click submit to continue to Part 2.
+                </statement>
+            </surveystatement>
+        </survey>
+        <metric>
+            <metricenable>testTimer</metricenable>
+            <metricenable>elementTimer</metricenable>
+            <metricenable>elementInitialPosition</metricenable>
+            <metricenable>elementTracker</metricenable>
+            <metricenable>elementFlagListenedTo</metricenable>
+            <metricenable>elementFlagMoved</metricenable>
+            <metricenable>elementListenTracker</metricenable>
+        </metric>
+        <interface>
+            <interfaceoption type="check" name="fragmentMoved"/>
+            <interfaceoption type="check" name="fragmentPlayed"/>
+            <interfaceoption type="show" name="ticks"/>
+            <interfaceoption type="show" name="playhead"/>
+        </interface>
+    </setup>
+    <page id="nat-a-06" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" position="0" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <interfaceoption name="fragmentFullPlayback" type="check"/>
+            <interfaceoption name="fragmentMoved" type="check"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-06-ref.wav" id="nat-a-06-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-06-mel.wav" id="nat-a-06-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-06-v08.wav" id="nat-a-06-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-06-v09.wav" id="nat-a-06-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-06-v10.wav" id="nat-a-06-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true">
+            <surveystatement id="intro_nat_1" name="intro_nat_1">
+                <statement>There are 12 pages on this test. On each page there will be 4 or 5 speech samples with a vertical natural rating scale. 
+
+1. Click on 'Play' at the bottom of the scale to listen to a speech sample
+2. Move the slider to reflect how natural the speech sounds
+3. Please listen to each speech sample fully before moving to the next page
+4. You do not have to use the full range of the scale if you do not want to
+5. Real human speech should be very close to 'Very Natural' and robotic speech would be 'Very Unnatural', but this is a subjective test so use you gut instinct on where the speech samples rate</statement>
+            </surveystatement>
+        </survey>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-07" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-07-ref.wav" id="nat-a-07-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-07-mel.wav" id="nat-a-07-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-07-v08.wav" id="nat-a-07-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-07-v09.wav" id="nat-a-07-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-07-v10.wav" id="nat-a-07-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-08" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-08-ref.wav" id="nat-a-08-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-08-mel.wav" id="nat-a-08-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-08-v08.wav" id="nat-a-08-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-08-v09.wav" id="nat-a-08-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-08-v10.wav" id="nat-a-08-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-09" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-09-ref.wav" id="nat-a-09-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-09-mel.wav" id="nat-a-09-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-09-v08.wav" id="nat-a-09-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-09-v09.wav" id="nat-a-09-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-09-v10.wav" id="nat-a-09-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-10" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-10-ref.wav" id="nat-a-10-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-10-mel.wav" id="nat-a-10-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-10-v08.wav" id="nat-a-10-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-10-v09.wav" id="nat-a-10-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-10-v10.wav" id="nat-a-10-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-a-11" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="a-11-ref.wav" id="nat-a-11-ref" gain="0" label="" type="reference" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-11-mel.wav" id="nat-a-11-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-11-v08.wav" id="nat-a-11-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-11-v09.wav" id="nat-a-11-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="a-11-v10.wav" id="nat-a-11-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-06" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-06-mel.wav" id="nat-t-06-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-06-v08.wav" id="nat-t-06-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-06-v09.wav" id="nat-t-06-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-06-v10.wav" id="nat-t-06-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-07" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-07-mel.wav" id="nat-t-07-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-07-v08.wav" id="nat-t-07-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-07-v09.wav" id="nat-t-07-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-07-v10.wav" id="nat-t-07-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-08" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-08-mel.wav" id="nat-t-08-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-08-v08.wav" id="nat-t-08-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-08-v09.wav" id="nat-t-08-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-08-v10.wav" id="nat-t-08-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-09" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-09-mel.wav" id="nat-t-09-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-09-v08.wav" id="nat-t-09-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-09-v09.wav" id="nat-t-09-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-09-v10.wav" id="nat-t-09-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-10" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-10-mel.wav" id="nat-t-10-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-10-v08.wav" id="nat-t-10-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-10-v09.wav" id="nat-t-10-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-10-v10.wav" id="nat-t-10-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+    <page id="nat-t-11" hostURL="media/experiment/naturalness/" randomiseOrder="true" repeatCount="0" loop="false" synchronous="false" label="capital" labelStart="" poolSize="0" alwaysInclude="false" preSilence="0" postSilence="0" playOne="false" restrictMovement="false" minNumberPlays="0">
+        <commentboxprefix>Comment on track</commentboxprefix>
+        <interface name="naturalness">
+            <title>Rate each sample how natural it sounds</title>
+            <interfaceoption type="show" name="playhead"/>
+            <interfaceoption type="show" name="page-count"/>
+            <interfaceoption name="volume" type="show"/>
+            <scales>
+                <scalelabel position="100">(Human) Very Natural</scalelabel>
+                <scalelabel position="75">More Natural</scalelabel>
+                <scalelabel position="50">Natural</scalelabel>
+                <scalelabel position="25">Unnatural</scalelabel>
+                <scalelabel position="0">(Robotic) Very Unnatural</scalelabel>
+            </scales>
+        </interface>
+        <audioelement url="t-11-mel.wav" id="nat-t-11-mel" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-11-v08.wav" id="nat-t-11-v08" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-11-v09.wav" id="nat-t-11-v09" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <audioelement url="t-11-v10.wav" id="nat-t-11-v10" gain="0" label="" type="normal" alwaysInclude="false" preSilence="0" postSilence="0" minNumberPlays="1"/>
+        <survey location="pre" showBackButton="true"/>
+        <survey location="post" showBackButton="true"/>
+    </page>
+</waet><datetime><date year="2023" month="8" day="20"/><time hour="19" minute="56" secs="15"/></datetime><navigator><platform>Win32</platform><vendor>Google Inc.</vendor><uagent>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36</uagent><window innerWidth="1536" innerHeight="715"/></navigator><survey location="pre" state="complete"><surveyresult ref="name" type="question" duration="12.792"><response>David Dunkley</response></surveyresult><surveyresult ref="headphones" type="checkbox" duration="14.815"><response name="yes" checked="false"/><response name="no" checked="true"/></surveyresult><surveyresult ref="quiet" type="checkbox" duration="5.072"><response name="yes" checked="true"/><response name="no" checked="false"/></surveyresult><surveyresult ref="english" type="checkbox" duration="13.936"><response name="Native" checked="false"/><response name="Excellent" checked="false"/><response name="Good" checked="true"/><response name="Basic" checked="false"/></surveyresult></survey><survey location="post" state="empty"><surveyresult ref="outro_nat_q" type="question"/></survey><page ref="nat-t-09" presentedId="1" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">73.80000000000001</metricresult></metric><audioelement ref="nat-t-09-v10" type="normal" url="t-09-v10.wav" fqurl="http://fredclarke.co.uk/t-09-v10.wav" gain="0" playGain="-10.37418914361453" presentedId="A"><metric><metricresult name="enableElementTimer">3.5013333333333208</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="0" value="0.75"/><movement time="0" value="0.49"/><movement time="0" value="0.76"/><movement time="8.821333333333314" value="0.23"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="3.5013333333333208"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="163200" duration="3.4"/><value interface-name="naturalness">0.23</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-t-09-v09" type="normal" url="t-09-v09.wav" fqurl="http://fredclarke.co.uk/t-09-v09.wav" gain="0" playGain="-10.75416657556929" presentedId="B"><metric><metricresult name="enableElementTimer">3.509333333333359</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="0" value="0.76"/><movement time="0" value="0.5"/><movement time="54.42933333333332" value="0.75"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="10.941333333333318" stop="14.450666666666677"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="163200" duration="3.4"/><value interface-name="naturalness">0.75</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-t-09-v08" type="normal" url="t-09-v08.wav" fqurl="http://fredclarke.co.uk/t-09-v08.wav" gain="0" playGain="-12.031413588603089" presentedId="C"><metric><metricresult name="enableElementTimer">3.3093333333333703</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="0" value="0.75"/><movement time="71.5813333333333" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="19.581333333333305" stop="22.890666666666675"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="153600" duration="3.2"/><value interface-name="naturalness">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-t-09-mel" type="normal" url="t-09-mel.wav" fqurl="http://fredclarke.co.uk/t-09-mel.wav" gain="0" playGain="-9.969462136037814" presentedId="D"><metric><metricresult name="enableElementTimer">4.181333333333384</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="0" value="0.43"/><movement time="33.73066666666665" value="0.24"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="26.9493333333333" stop="31.130666666666684"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="195840" duration="4.08"/><value interface-name="naturalness">0.24</value><comment><question>Comment on track D</question><response/></comment></audioelement><error time="0">You have not played fragments A, B, C, D enough. Please keep listening</error><error time="36.54933333333332">You have not moved tracks B, and C.</error><error time="58.51999999999998">You have not moved track C.</error></page><page ref="nat-a-09" presentedId="3" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">47.48000000000002</metricresult></metric><audioelement ref="nat-a-09-mel" type="normal" url="a-09-mel.wav" fqurl="http://fredclarke.co.uk/a-09-mel.wav" gain="0" playGain="-7.693636059101628" presentedId="A"><metric><metricresult name="enableElementTimer">4.600000000000023</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="44.0986666666667" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="4.600000000000023"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="216000" duration="4.5"/><value interface-name="naturalness">1</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-a-09-v10" type="normal" url="a-09-v10.wav" fqurl="http://fredclarke.co.uk/a-09-v10.wav" gain="0" playGain="-8.293045528232257" presentedId="B"><metric><metricresult name="enableElementTimer">4.349333333333334</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="41.639999999999986" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="7.1200000000000045" stop="11.469333333333338"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="203520" duration="4.24"/><value interface-name="naturalness">1</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-a-09-v08" type="normal" url="a-09-v08.wav" fqurl="http://fredclarke.co.uk/a-09-v08.wav" gain="0" playGain="-10.775890052419905" presentedId="C"><metric><metricresult name="enableElementTimer">4.381333333333373</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="39.94933333333336" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="14.789333333333332" stop="19.170666666666705"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="205440" duration="4.28"/><value interface-name="naturalness">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-a-09-v09" type="normal" url="a-09-v09.wav" fqurl="http://fredclarke.co.uk/a-09-v09.wav" gain="0" playGain="-7.647602385041308" presentedId="D"><metric><metricresult name="enableElementTimer">4.581333333333362</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="37.66933333333333" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="19.898666666666657" stop="24.480000000000018"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="215040" duration="4.48"/><value interface-name="naturalness">1</value><comment><question>Comment on track D</question><response/></comment></audioelement><audioelement ref="nat-a-09-ref" type="reference" url="a-09-ref.wav" fqurl="http://fredclarke.co.uk/a-09-ref.wav" gain="0" playGain="-3.624188581660317" presentedId="E"><metric><metricresult name="enableElementTimer">4.869333333333316</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="35" value="0.75"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="25.25066666666669" stop="30.120000000000005"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="228480" duration="4.76"/><value interface-name="naturalness">0.75</value><comment><question>Comment on track E</question><response/></comment></audioelement></page><page ref="nat-a-07" presentedId="5" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">57.120000000000005</metricresult></metric><audioelement ref="nat-a-07-ref" type="reference" url="a-07-ref.wav" fqurl="http://fredclarke.co.uk/a-07-ref.wav" gain="0" playGain="-3.4401958878582133" presentedId="A"><metric><metricresult name="enableElementTimer">7.490666666666584</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="54.73066666666659" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="7.490666666666584"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="354243" duration="7.3800625"/><value interface-name="naturalness">1</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-a-07-mel" type="normal" url="a-07-mel.wav" fqurl="http://fredclarke.co.uk/a-07-mel.wav" gain="0" playGain="-8.964615933314194" presentedId="B"><metric><metricresult name="enableElementTimer">7.400000000000091</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="51.879999999999995" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="9.65866666666659" stop="17.05866666666668"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="350400" duration="7.3"/><value interface-name="naturalness">1</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-a-07-v08" type="normal" url="a-07-v08.wav" fqurl="http://fredclarke.co.uk/a-07-v08.wav" gain="0" playGain="-9.377452795323025" presentedId="C"><metric><metricresult name="enableElementTimer">7.181333333333328</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="48.639999999999986" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="18.538666666666586" stop="25.719999999999914"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="339840" duration="7.08"/><value interface-name="naturalness">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-a-07-v09" type="normal" url="a-07-v09.wav" fqurl="http://fredclarke.co.uk/a-07-v09.wav" gain="0" playGain="-7.383443325607031" presentedId="D"><metric><metricresult name="enableElementTimer">7.349333333333334</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="45.8986666666666" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="26.43999999999994" stop="33.789333333333275"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="347520" duration="7.24"/><value interface-name="naturalness">1</value><comment><question>Comment on track D</question><response/></comment></audioelement><audioelement ref="nat-a-07-v10" type="normal" url="a-07-v10.wav" fqurl="http://fredclarke.co.uk/a-07-v10.wav" gain="0" playGain="-9.368673910455012" presentedId="E"><metric><metricresult name="enableElementTimer">7.30933333333337</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="44.05066666666664" value="0.76"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="34.250666666666575" stop="41.559999999999945"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="345600" duration="7.2"/><value interface-name="naturalness">0.76</value><comment><question>Comment on track E</question><response/></comment></audioelement></page><page ref="nat-a-08" presentedId="7" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="nat-a-08-ref" type="reference" url="a-08-ref.wav" fqurl="http://fredclarke.co.uk/a-08-ref.wav" gain="0" playGain="-3.586389828879258" presentedId="A"><metric/></audioelement><audioelement ref="nat-a-08-v10" type="normal" url="a-08-v10.wav" fqurl="http://fredclarke.co.uk/a-08-v10.wav" gain="0" playGain="-8.815449829908797" presentedId="B"><metric/></audioelement><audioelement ref="nat-a-08-mel" type="normal" url="a-08-mel.wav" fqurl="http://fredclarke.co.uk/a-08-mel.wav" gain="0" playGain="-10.141538083919862" presentedId="C"><metric/></audioelement><audioelement ref="nat-a-08-v08" type="normal" url="a-08-v08.wav" fqurl="http://fredclarke.co.uk/a-08-v08.wav" gain="0" playGain="-9.965931109591871" presentedId="D"><metric/></audioelement><audioelement ref="nat-a-08-v09" type="normal" url="a-08-v09.wav" fqurl="http://fredclarke.co.uk/a-08-v09.wav" gain="0" playGain="-10.509280214722796" presentedId="E"><metric/></audioelement></page><page ref="nat-t-06" presentedId="9" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="nat-t-06-v09" type="normal" url="t-06-v09.wav" fqurl="http://fredclarke.co.uk/t-06-v09.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-06-v10" type="normal" url="t-06-v10.wav" fqurl="http://fredclarke.co.uk/t-06-v10.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-06-mel" type="normal" url="t-06-mel.wav" fqurl="http://fredclarke.co.uk/t-06-mel.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-06-v08" type="normal" url="t-06-v08.wav" fqurl="http://fredclarke.co.uk/t-06-v08.wav" gain="0"><metric/></audioelement></page><page ref="nat-t-11" presentedId="11" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="nat-t-11-v09" type="normal" url="t-11-v09.wav" fqurl="http://fredclarke.co.uk/t-11-v09.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-11-mel" type="normal" url="t-11-mel.wav" fqurl="http://fredclarke.co.uk/t-11-mel.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-11-v08" type="normal" url="t-11-v08.wav" fqurl="http://fredclarke.co.uk/t-11-v08.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-11-v10" type="normal" url="t-11-v10.wav" fqurl="http://fredclarke.co.uk/t-11-v10.wav" gain="0"><metric/></audioelement></page><page ref="nat-a-11" presentedId="2" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">49.51999999999998</metricresult></metric><audioelement ref="nat-a-11-v08" type="normal" url="a-11-v08.wav" fqurl="http://fredclarke.co.uk/a-11-v08.wav" gain="0" playGain="-8.902149922006801" presentedId="A"><metric><metricresult name="enableElementTimer">2.9493333333333567</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="37.37066666666669" value="0.77"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="2.9493333333333567"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="136320" duration="2.84"/><value interface-name="naturalness">0.77</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-a-11-mel" type="normal" url="a-11-mel.wav" fqurl="http://fredclarke.co.uk/a-11-mel.wav" gain="0" playGain="-9.866275984878921" presentedId="B"><metric><metricresult name="enableElementTimer">3.109333333333325</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="39.56" value="0.76"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="6.199999999999989" stop="9.309333333333313"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="144000" duration="3"/><value interface-name="naturalness">0.76</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-a-11-v10" type="normal" url="a-11-v10.wav" fqurl="http://fredclarke.co.uk/a-11-v10.wav" gain="0" playGain="-8.459644052889754" presentedId="C"><metric><metricresult name="enableElementTimer">2.749333333333311</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="41.879999999999995" value="0.76"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="13.930666666666696" stop="16.680000000000007"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="126720" duration="2.64"/><value interface-name="naturalness">0.76</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-a-11-ref" type="reference" url="a-11-ref.wav" fqurl="http://fredclarke.co.uk/a-11-ref.wav" gain="0" playGain="-3.841090391777367" presentedId="D"><metric><metricresult name="enableElementTimer">3.2799999999999727</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="44.639999999999986" value="0.76"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="20.25066666666669" stop="23.53066666666666"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="152160" duration="3.17"/><value interface-name="naturalness">0.76</value><comment><question>Comment on track D</question><response/></comment></audioelement><audioelement ref="nat-a-11-v09" type="normal" url="a-11-v09.wav" fqurl="http://fredclarke.co.uk/a-11-v09.wav" gain="0" playGain="-11.246757433259129" presentedId="E"><metric><metricresult name="enableElementTimer">3.1813333333333276</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="46.77866666666665" value="0.76"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="26.418666666666695" stop="29.600000000000023"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="147840" duration="3.08"/><value interface-name="naturalness">0.76</value><comment><question>Comment on track E</question><response/></comment></audioelement></page><page ref="nat-t-10" presentedId="6" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">36.15999999999997</metricresult></metric><audioelement ref="nat-t-10-v09" type="normal" url="t-10-v09.wav" fqurl="http://fredclarke.co.uk/t-10-v09.wav" gain="0" playGain="-10.310189356454915" presentedId="A"><metric><metricresult name="enableElementTimer">4.549333333333379</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="24.730666666666707" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="4.549333333333379"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="213120" duration="4.44"/><value interface-name="naturalness">1</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-t-10-v10" type="normal" url="t-10-v10.wav" fqurl="http://fredclarke.co.uk/t-10-v10.wav" gain="0" playGain="-10.494440170436047" presentedId="B"><metric><metricresult name="enableElementTimer">4.30933333333337</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="26.159999999999968" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="6.480000000000018" stop="10.789333333333389"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="201600" duration="4.2"/><value interface-name="naturalness">1</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-t-10-v08" type="normal" url="t-10-v08.wav" fqurl="http://fredclarke.co.uk/t-10-v08.wav" gain="0" playGain="-11.467942779966101" presentedId="C"><metric><metricresult name="enableElementTimer">4.349333333333334</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="28.85066666666671" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="12.200000000000045" stop="16.54933333333338"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="203520" duration="4.24"/><value interface-name="naturalness">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-t-10-mel" type="normal" url="t-10-mel.wav" fqurl="http://fredclarke.co.uk/t-10-mel.wav" gain="0" playGain="-9.762482649806987" presentedId="D"><metric><metricresult name="enableElementTimer">5.141333333333364</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="32.970666666666716" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="17.30933333333337" stop="22.450666666666734"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="241920" duration="5.04"/><value interface-name="naturalness">1</value><comment><question>Comment on track D</question><response/></comment></audioelement></page><page ref="nat-t-07" presentedId="10" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="nat-t-07-v09" type="normal" url="t-07-v09.wav" fqurl="http://fredclarke.co.uk/t-07-v09.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-07-v08" type="normal" url="t-07-v08.wav" fqurl="http://fredclarke.co.uk/t-07-v08.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-07-v10" type="normal" url="t-07-v10.wav" fqurl="http://fredclarke.co.uk/t-07-v10.wav" gain="0"><metric/></audioelement><audioelement ref="nat-t-07-mel" type="normal" url="t-07-mel.wav" fqurl="http://fredclarke.co.uk/t-07-mel.wav" gain="0"><metric/></audioelement></page><page ref="nat-t-08" presentedId="4" state="complete"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric><metricresult id="testTime">31.33066666666673</metricresult></metric><audioelement ref="nat-t-08-v09" type="normal" url="t-08-v09.wav" fqurl="http://fredclarke.co.uk/t-08-v09.wav" gain="0" playGain="-11.141720685062687" presentedId="A"><metric><metricresult name="enableElementTimer">3.381333333333373</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="27.370666666666693" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="3.381333333333373"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="157440" duration="3.28"/><value interface-name="naturalness">1</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-t-08-v08" type="normal" url="t-08-v08.wav" fqurl="http://fredclarke.co.uk/t-08-v08.wav" gain="0" playGain="-10.35462178977546" presentedId="B"><metric><metricresult name="enableElementTimer">3.1493333333332885</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="24.38933333333341" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="4.970666666666716" stop="8.120000000000005"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="145920" duration="3.04"/><value interface-name="naturalness">1</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-t-08-mel" type="normal" url="t-08-mel.wav" fqurl="http://fredclarke.co.uk/t-08-mel.wav" gain="0" playGain="-10.197280281553224" presentedId="C"><metric><metricresult name="enableElementTimer">3.5493333333333226</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="22.360000000000014" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="9.341333333333353" stop="12.890666666666675"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="165120" duration="3.44"/><value interface-name="naturalness">1</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-t-08-v10" type="normal" url="t-08-v10.wav" fqurl="http://fredclarke.co.uk/t-08-v10.wav" gain="0" playGain="-8.511603869535369" presentedId="D"><metric><metricresult name="enableElementTimer">3.3413333333334094</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="20.189333333333366" value="1"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="14" stop="17.34133333333341"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="155520" duration="3.24"/><value interface-name="naturalness">1</value><comment><question>Comment on track D</question><response/></comment></audioelement></page><page ref="nat-a-06" presentedId="0" state="complete"><survey location="pre" state="complete"/><survey location="post" state="empty"/><metric><metricresult id="testTime">94.38933333333333</metricresult></metric><audioelement ref="nat-a-06-ref" type="reference" url="a-06-ref.wav" fqurl="http://fredclarke.co.uk/a-06-ref.wav" gain="0" playGain="-3.6288194867405963" presentedId="A"><metric><metricresult name="enableElementTimer">8.010666666666651</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="83.21066666666667" value="0.59"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="0" stop="8.010666666666651"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="379680" duration="7.91"/><value interface-name="naturalness">0.59</value><comment><question>Comment on track A</question><response/></comment></audioelement><audioelement ref="nat-a-06-v09" type="normal" url="a-06-v09.wav" fqurl="http://fredclarke.co.uk/a-06-v09.wav" gain="0" playGain="-9.08329169796049" presentedId="B"><metric><metricresult name="enableElementTimer">8.109333333333325</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="85.46933333333334" value="0.58"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="16.26133333333334" stop="24.370666666666665"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="384000" duration="8"/><value interface-name="naturalness">0.58</value><comment><question>Comment on track B</question><response/></comment></audioelement><audioelement ref="nat-a-06-v10" type="normal" url="a-06-v10.wav" fqurl="http://fredclarke.co.uk/a-06-v10.wav" gain="0" playGain="-6.648115809102141" presentedId="C"><metric><metricresult name="enableElementTimer">7.909333333333336</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="87.06133333333332" value="0.6"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="27.97066666666666" stop="35.879999999999995"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="374400" duration="7.8"/><value interface-name="naturalness">0.6</value><comment><question>Comment on track C</question><response/></comment></audioelement><audioelement ref="nat-a-06-v08" type="normal" url="a-06-v08.wav" fqurl="http://fredclarke.co.uk/a-06-v08.wav" gain="0" playGain="-8.380939622700954" presentedId="D"><metric><metricresult name="enableElementTimer">7.581333333333333</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="88.42933333333332" value="0.6"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="41.50933333333333" stop="49.090666666666664"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="359040" duration="7.48"/><value interface-name="naturalness">0.6</value><comment><question>Comment on track D</question><response/></comment></audioelement><audioelement ref="nat-a-06-mel" type="normal" url="a-06-mel.wav" fqurl="http://fredclarke.co.uk/a-06-mel.wav" gain="0" playGain="-8.316235003554276" presentedId="E"><metric><metricresult name="enableElementTimer">8.141333333333336</metricresult><metricresult name="elementTrackerFull"><movement time="0" value="0.5"/><movement time="91.45066666666665" value="0.6"/></metricresult><metricresult name="elementListenTracker"><event><testtime start="51.47999999999999" stop="59.621333333333325"/><buffertime start="0" stop="0"/></event></metricresult><metricresult name="elementInitialPosition">0.5</metricresult><metricresult name="elementFlagListenedTo">true</metricresult><metricresult name="elementFlagMoved">true</metricresult></metric><file sampleRate="48000" channels="1" sampleCount="385919" duration="8.039979166666667"/><value interface-name="naturalness">0.6</value><comment><question>Comment on track E</question><response/></comment></audioelement><error time="70.02933333333331">You have not moved tracks A, B, C, D, and E.</error></page><page ref="nat-a-10" presentedId="8" state="empty"><survey location="pre" state="empty"/><survey location="post" state="empty"/><metric/><audioelement ref="nat-a-10-v10" type="normal" url="a-10-v10.wav" fqurl="http://fredclarke.co.uk/a-10-v10.wav" gain="0"><metric/></audioelement><audioelement ref="nat-a-10-v09" type="normal" url="a-10-v09.wav" fqurl="http://fredclarke.co.uk/a-10-v09.wav" gain="0"><metric/></audioelement><audioelement ref="nat-a-10-v08" type="normal" url="a-10-v08.wav" fqurl="http://fredclarke.co.uk/a-10-v08.wav" gain="0"><metric/></audioelement><audioelement ref="nat-a-10-mel" type="normal" url="a-10-mel.wav" fqurl="http://fredclarke.co.uk/a-10-mel.wav" gain="0"><metric/></audioelement><audioelement ref="nat-a-10-ref" type="reference" url="a-10-ref.wav" fqurl="http://fredclarke.co.uk/a-10-ref.wav" gain="0"><metric/></audioelement></page></waetresult>
