@@ -200,6 +200,8 @@ for line in duration_page:
 combined_list = [page_names, average_duration_page, fragments_per_page, number_of_subjects_page]
 combined_list = sorted(zip(*combined_list), key=operator.itemgetter(1, 2)) # sort
 
+total_results = {'sim': 0, 'nat': 0, 'nat-a': 0, 'nat-t': 0}
+
 # Show average duration for all songs
 print("Average duration per page ID:")
 for page_index in range(len(page_names)):
@@ -208,7 +210,20 @@ for page_index in range(len(page_names)):
           + " (" + str(combined_list[page_index][3]) + " subjects, " \
           + str(combined_list[page_index][2]) + " fragments)")
 
-print(f'people:')
+    question_name = combined_list[page_index][0]
+    question_total = combined_list[page_index][3]
+    if question_name[:3] == 'sim':
+        total_results['sim'] = total_results['sim'] + question_total
+    else:
+        total_results['nat'] = total_results['nat'] + question_total
+        if question_name[:5] == 'nat-a':
+            total_results['nat-a'] = total_results['nat-a'] + question_total
+        else:
+            total_results['nat-t'] = total_results['nat-t'] + question_total
+
+print(f'total Q results: {total_results}')
+
+print(f'{len(names) / 2:.0f} people completed:')
 for name in sorted(names):
     print(name)
 
