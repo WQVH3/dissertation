@@ -129,7 +129,7 @@ if __name__ == "__main__":
     
     # Add command-line arguments
     parser.add_argument("--natural_ref_min", type=float, default=0.6, help="minimum score for natural reference to be classed as success, default=0.6")
-    parser.add_argument("--pct_natural_ref_passed", type=float, default=0.6, help="percent of natural references to pass, default=0.8")
+    parser.add_argument("--pct_natural_ref_passed", type=float, default=0.6, help="percent of natural references to pass, default=0.6")
     parser.add_argument("--ratings_path", type=str, default='./../saves/ratings', help="relative path to ratings folder, default=./../saves/ratings")
     
     args = parser.parse_args()
