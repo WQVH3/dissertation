@@ -161,35 +161,6 @@ def bootstrap_results(results_type, nb_bootstrap=5000):
     return results_mean  # dictionary of mean, and CI for each model
 
 
-def bootstrap_dependent_results(results_type, nb_bootstrap=5000):
-    # given a dictionary of results and the number of times to iterate bootstrap, calculate the mean and confidence intervals
-    results_mean = {}
-    means_list_models = [[] for i in range(len(results_type))]
-    N = len(results_type[list(results_type.keys())[0]])
-    
-    for n in range(nb_bootstrap):
-        random_sample_index = np.random.choice(range(N), size=N, replace=True)
-        for i, model in enumerate(results_type):
-            results = results_type[model]
-            random_sample = results[random_sample_index]
-            means_list_models[i].append(random_sample.mean())
-    
-    for model in results_type:
-        results_mean[model] = {}
-        results_mean[model]['mean'] = results_type[model].mean()
-        
-        means_list = means_list_models[i]
-        means_list.sort()
-        
-        # get the 95% confidence intervals
-        lower_index = int(0.025 * nb_bootstrap)
-        upper_index = int(0.975 * nb_bootstrap)
-        results_mean[model]['lower'] = means_list[lower_index]
-        results_mean[model]['upper'] = means_list[upper_index]
-        
-    return results_mean
-
-
 def print_results_mean(results_mean, question_type):
     print(f'*****************')
     print(f'{question_type:17}')
