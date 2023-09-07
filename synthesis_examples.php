@@ -32,14 +32,15 @@
 </head>
 <body>
     <a href="synthesis_errors.php">Link: Examples of synthesis errors</a>
+    <br>
     <p>Examples from the Alexia evaluation dataset, and from the 100 sentence Tricky Dataset</p>
     <p>Note, there are no Human Reference speech samples for the 100 sentence Tricky Dataset because it is only a dataset of text</p>
-    <p></p>
+    <br>
     <div class="grid-container">
         <?php
         // Define an array with headers and sound file paths
         $soundData = array(
-            array("Sample", "Reference", "mel-spectrogram", "w2v_pt_L12", "w2v_pt_L09", "w2v_ft_L09"),
+            array("Sample", "Human Reference", "mel-spectrogram", "w2v_pt_L12", "w2v_pt_L09", "w2v_ft_L09"),
             array(
                 "Alexia Dataset - 1",
                 "media/web_examples/eval_alexia/alex-ref-1.wav",

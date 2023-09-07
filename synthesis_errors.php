@@ -32,8 +32,9 @@
 </head>
 <body>
     <a href="synthesis_examples.php">Link: Examples of Alexia and Tricky dataset synthesis</a>
+    <br>
     <p>Examples from the 100-Tricky Dataset where the synthesised speech made errrors</p>
-    <p> </p>
+    <br>
     <div class="grid-container">
         <?php
         // Define an array with headers and sound file paths
