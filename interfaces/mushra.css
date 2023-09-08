@@ -64,6 +64,9 @@ div#outside-reference-holder {
 button.outside-reference {
     position: inherit;
     margin: 0px 5px;
+    width: 250px;
+    height: 80px;
+    background-color: #eea61ff3;
 }
 div.track-slider-playing {
     background-color: rgba(255, 201, 201, 0.5);

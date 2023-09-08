@@ -37,9 +37,9 @@ div.comment-div span {
     margin-left: 15px;
 }
 div.popupHolder {
-    width: 500px;
+    width: 750px;
     min-height: 250px;
-    max-height: 400px;
+    max-height: 500px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 50px #000;

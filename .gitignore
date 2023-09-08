@@ -7,7 +7,6 @@
 *.out
 *.synctex.gz
 *.toc
-saves/*.xml
 *.DS_STORE
 *.swp
 *.swo

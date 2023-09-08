@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: webaudio_compose
+    image: php:8.0-apache
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 80:80

@@ -1,6 +1,8 @@
 # Web Audio Evaluation Tool
 
-## Authors
+This repository is originally from https://github.com/BrechtDeMan/WebAudioEvaluationTool/wiki and has been modified for a subjective MUSHRA listening test for my Dissertation for my Data Science and Machine Learning MSc at UCL
+
+## Original Authors
 
 | Author  | e-mail | 
 | ------- | ------ |
